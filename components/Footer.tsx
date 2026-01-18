@@ -63,7 +63,7 @@ export default function Footer() {
     );
 
     return (
-        <footer className="mt-24 pt-16 pb-12 border-t border-slate-100 dark:border-white/5 relative bg-slate-900 text-white z-[200]">
+        <footer className="mt-16 sm:mt-24 pt-12 sm:pt-16 pb-24 md:pb-12 border-t border-slate-100 dark:border-white/5 relative bg-slate-900 text-white z-[200]">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center md:text-left">

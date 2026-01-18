@@ -5,6 +5,7 @@ import { LanguageProvider } from "@/lib/LanguageContext";
 import { CartProvider } from "@/lib/CartContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MobileNav from "@/components/MobileNav";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -31,12 +32,13 @@ export default function RootLayout({
         <LanguageProvider>
             <CartProvider>
                 <html lang="fr" className={`dark ${inter.variable} ${outfit.variable}`}>
-                    <body className="font-sans min-h-screen relative selection:bg-blue-900 selection:bg-blue-400/30 selection:text-white">
+                    <body className="font-sans min-h-screen relative selection:bg-blue-900 selection:bg-blue-400/30 selection:text-white pb-20 md:pb-0">
                         <Navbar />
                         <main>
                             {children}
                         </main>
                         <Footer />
+                        <MobileNav />
                     </body>
                 </html>
             </CartProvider>

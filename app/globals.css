@@ -215,3 +215,77 @@ input::placeholder {
 .bg-slate-900\/5 {
     background-color: rgba(255, 255, 255, 0.03) !important;
 }
+
+/* ===== MOBILE ENHANCEMENTS ===== */
+
+/* iOS input zoom prevention - minimum 16px font */
+@media screen and (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Minimum tap target size for accessibility */
+@media screen and (max-width: 768px) {
+    button, a, [role="button"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Safe area for notched devices */
+.safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.safe-area-top {
+    padding-top: env(safe-area-inset-top, 0);
+}
+
+/* Hide scrollbar for horizontal scroll areas */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Touch action improvements */
+.touch-pan-x {
+    touch-action: pan-x;
+}
+
+.touch-pan-y {
+    touch-action: pan-y;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Better focus states */
+*:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Prevent text selection on UI elements */
+.no-select {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Mobile card hover disable */
+@media (hover: none) {
+    .futuristic-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
