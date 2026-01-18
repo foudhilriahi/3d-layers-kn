@@ -174,34 +174,34 @@ export default function CartPage() {
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-12 md:py-24">
-            <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white mb-8 sm:mb-12 md:mb-16 tracking-tighter italic uppercase ${language === 'ar' ? 'text-right' : ''}`}>
+            <h1 className={`text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 sm:mb-10 md:mb-14 tracking-tighter italic uppercase ${language === 'ar' ? 'text-right' : ''}`}>
                 {language === 'ar' ? 'سلة التسوق' : language === 'en' ? 'Your Shopping Bag' : 'Votre Panier'}
             </h1>
 
-            <div className="grid lg:grid-cols-12 gap-16">
+            <div className="grid lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-16">
                 {/* Left Side: Product List and Delivery Info */}
                 <div className="lg:col-span-7 space-y-8">
                     <div className="space-y-6">
                         {cart.map((item) => {
                             const localName = language === 'en' ? item.product.name_en : language === 'ar' ? item.product.name_ar : item.product.name;
                             return (
-                                <div key={item.product.id} className={`glass p-4 sm:p-6 rounded-[2rem] sm:rounded-[2.5rem] border-white/10 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 group hover:border-white/20 transition-all duration-500 ${language === 'ar' ? 'sm:flex-row-reverse text-right' : ''}`}>
-                                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl sm:rounded-2xl overflow-hidden bg-white p-2 sm:p-3 flex-shrink-0 shadow-inner">
-                                        <img src={item.product.image_url} alt={localName || item.product.name} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
+                                <div key={item.product.id} className={`glass p-3 sm:p-5 rounded-xl sm:rounded-[2rem] border-white/10 flex flex-row items-center gap-3 sm:gap-5 group hover:border-white/20 transition-all duration-500 ${language === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
+                                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg sm:rounded-xl overflow-hidden bg-white p-1.5 sm:p-2 flex-shrink-0 shadow-inner">
+                                        <img src={item.product.image_url} alt={localName || item.product.name} className="w-full h-full object-contain" />
                                     </div>
-                                    <div className="flex-grow">
-                                        <h3 className="text-xl font-black text-white mb-1 italic">
+                                    <div className="flex-grow min-w-0">
+                                        <h3 className="text-sm sm:text-lg font-black text-white mb-0.5 sm:mb-1 italic truncate">
                                             {localName || item.product.name}
                                         </h3>
-                                        <p className="text-blue-400 font-bold mb-4">{item.product.price.toFixed(2)} TND</p>
-                                        <div className={`flex items-center gap-4 ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
+                                        <p className="text-blue-400 font-bold text-xs sm:text-sm mb-2 sm:mb-3">{item.product.price.toFixed(2)} TND</p>
+                                        <div className={`flex items-center gap-2 sm:gap-4 flex-wrap ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
                                             <div className="flex items-center dark-glass rounded-full border-white/10">
-                                                <button type="button" onClick={() => updateQuantity(item.product.id, item.quantity - 1)} className="w-10 h-10 flex items-center justify-center text-white hover:text-blue-400 transition-colors">-</button>
-                                                <span className="w-8 text-center text-white font-black text-sm">{item.quantity}</span>
-                                                <button type="button" onClick={() => updateQuantity(item.product.id, item.quantity + 1)} className="w-10 h-10 flex items-center justify-center text-white hover:text-blue-400 transition-colors">+</button>
+                                                <button type="button" onClick={() => updateQuantity(item.product.id, item.quantity - 1)} className="w-7 h-7 sm:w-9 sm:h-9 flex items-center justify-center text-white hover:text-blue-400 transition-colors text-sm sm:text-base">-</button>
+                                                <span className="w-6 sm:w-8 text-center text-white font-black text-xs sm:text-sm">{item.quantity}</span>
+                                                <button type="button" onClick={() => updateQuantity(item.product.id, item.quantity + 1)} className="w-7 h-7 sm:w-9 sm:h-9 flex items-center justify-center text-white hover:text-blue-400 transition-colors text-sm sm:text-base">+</button>
                                             </div>
-                                            <button type="button" onClick={() => removeFromCart(item.product.id)} className="text-red-500/50 hover:text-red-500 text-xs font-black uppercase tracking-widest transition-colors">
-                                                {language === 'ar' ? 'حذف' : 'Supprimer'}
+                                            <button type="button" onClick={() => removeFromCart(item.product.id)} className="text-red-500/50 hover:text-red-500 text-[10px] sm:text-xs font-black uppercase tracking-wider transition-colors">
+                                                ✕
                                             </button>
                                         </div>
                                     </div>
@@ -211,12 +211,12 @@ export default function CartPage() {
                     </div>
 
                     {/* Delivery Information Box */}
-                    <div className="glass p-8 rounded-[2.5rem] border-white/10 space-y-4 animate-in slide-in-from-left duration-700">
-                        <div className="flex items-center gap-4 text-blue-400">
-                            <span className="text-3xl">🏠</span>
-                            <h3 className="text-xl font-black uppercase tracking-tighter italic">Livraison à domicile express</h3>
+                    <div className="glass p-4 sm:p-6 rounded-xl sm:rounded-[2rem] border-white/10 space-y-3 animate-in slide-in-from-left duration-700">
+                        <div className="flex items-center gap-2 sm:gap-3 text-blue-400">
+                            <span className="text-xl sm:text-2xl">🏠</span>
+                            <h3 className="text-sm sm:text-base font-black uppercase tracking-tighter italic">Livraison express</h3>
                         </div>
-                        <p className="text-slate-400 font-bold text-lg leading-relaxed">
+                        <p className="text-slate-400 font-bold text-xs sm:text-sm leading-relaxed">
                             Nous livrons à domicile partout en Tunisie pour seulement <span className="text-white">10 TND</span>.
                             Le paiement se fait <span className="text-emerald-400">en espèces (cash)</span> à la livraison.
                             Vous avez le droit de vérifier votre colis avant de payer !
@@ -226,9 +226,9 @@ export default function CartPage() {
 
                 {/* Right Side: Sticky Form */}
                 <div className="lg:col-span-5">
-                    <div className="glass p-6 sm:p-8 md:p-10 rounded-[2rem] sm:rounded-[3rem] border-white/10 sticky top-24 sm:top-32 shadow-2xl animate-in slide-in-from-right duration-700">
-                        <h2 className={`text-2xl sm:text-3xl font-black text-white mb-6 sm:mb-8 italic uppercase tracking-tighter ${language === 'ar' ? 'text-right' : ''}`}>
-                            Confirmer la commande
+                    <div className="glass p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-[2rem] border-white/10 sticky top-20 sm:top-24 shadow-2xl animate-in slide-in-from-right duration-700">
+                        <h2 className={`text-lg sm:text-xl md:text-2xl font-black text-white mb-4 sm:mb-6 italic uppercase tracking-tighter ${language === 'ar' ? 'text-right' : ''}`}>
+                            Confirmer
                         </h2>
                         <form onSubmit={handleSubmit} className="space-y-8">
                             <div className={`space-y-6 ${language === 'ar' ? 'text-right' : ''}`}>
@@ -246,7 +246,7 @@ export default function CartPage() {
                                             setFullNameError("");
                                         }}
                                         onBlur={() => validateFullName(fullName)}
-                                        className={`w-full bg-white/5 border rounded-2xl px-6 py-4 text-white font-bold focus:outline-none transition-colors ${fullNameError ? 'border-red-500 ring-1 ring-red-500/50' : 'border-white/10 focus:border-blue-500'}`}
+                                        className={`w-full bg-white/5 border rounded-xl sm:rounded-2xl px-4 py-3 sm:px-5 sm:py-4 text-sm sm:text-base text-white font-bold focus:outline-none transition-colors ${fullNameError ? 'border-red-500 ring-1 ring-red-500/50' : 'border-white/10 focus:border-blue-500'}`}
                                     />
                                     {fullNameError && (
                                         <p className="mt-2 text-[10px] font-black text-red-500 uppercase italic animate-bounce">
@@ -262,7 +262,7 @@ export default function CartPage() {
                                             value={selectedGov}
                                             onChange={(e) => { setSelectedGov(e.target.value); setSelectedDel(""); }}
                                             required
-                                            className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-4 py-4 text-white font-bold focus:outline-none focus:border-blue-500 transition-colors appearance-none"
+                                            className="w-full bg-slate-900/50 border border-white/10 rounded-xl sm:rounded-2xl px-3 py-3 sm:px-4 sm:py-4 text-sm sm:text-base text-white font-bold focus:outline-none focus:border-blue-500 transition-colors appearance-none"
                                         >
                                             <option value="" disabled>Sélectionner</option>
                                             {TUNISIAN_DATA.map(g => (
@@ -271,13 +271,13 @@ export default function CartPage() {
                                         </select>
                                     </div>
                                     <div>
-                                        <label className="block text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-3">Délégation</label>
+                                        <label className="block text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-2 sm:mb-3">Délégation</label>
                                         <select
                                             value={selectedDel}
                                             onChange={(e) => setSelectedDel(e.target.value)}
                                             required
                                             disabled={!selectedGov}
-                                            className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-4 py-4 text-white font-bold focus:outline-none focus:border-blue-500 transition-colors appearance-none disabled:opacity-50"
+                                            className="w-full bg-slate-900/50 border border-white/10 rounded-xl sm:rounded-2xl px-3 py-3 sm:px-4 sm:py-4 text-sm sm:text-base text-white font-bold focus:outline-none focus:border-blue-500 transition-colors appearance-none disabled:opacity-50"
                                         >
                                             <option value="" disabled>Sélectionner</option>
                                             {delegations.map(d => (
@@ -297,7 +297,7 @@ export default function CartPage() {
                                         type="tel"
                                         value={phone}
                                         onChange={handlePhoneChange}
-                                        className={`w-full bg-white/5 border rounded-2xl px-6 py-4 text-white font-bold focus:outline-none transition-colors ${phoneError ? 'border-red-500 ring-1 ring-red-500/50' : 'border-white/10 focus:border-blue-500'}`}
+                                        className={`w-full bg-white/5 border rounded-xl sm:rounded-2xl px-4 py-3 sm:px-5 sm:py-4 text-sm sm:text-base text-white font-bold focus:outline-none transition-colors ${phoneError ? 'border-red-500 ring-1 ring-red-500/50' : 'border-white/10 focus:border-blue-500'}`}
                                     />
                                     {phoneError && (
                                         <p className="mt-2 text-[10px] font-black text-red-500 uppercase italic animate-bounce">
@@ -318,13 +318,13 @@ export default function CartPage() {
                                 </div>
                                 <div className={`flex justify-between items-center pt-2 ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
                                     <span className="text-slate-500 font-black uppercase tracking-widest text-xs">Total à payer</span>
-                                    <span className="text-2xl sm:text-3xl md:text-4xl font-black text-white italic tracking-tighter">{(totalPrice + 10).toFixed(2)} <span className="text-base sm:text-lg uppercase">TND</span></span>
+                                    <span className="text-xl sm:text-2xl md:text-3xl font-black text-white italic tracking-tighter">{(totalPrice + 10).toFixed(2)} <span className="text-sm sm:text-base uppercase">TND</span></span>
                                 </div>
 
                                 <button
                                     type="submit"
                                     disabled={status === 'loading'}
-                                    className="w-full bg-blue-600 text-white py-6 rounded-[2rem] font-black text-xl shadow-2xl hover:bg-white hover:text-slate-900 transition-all transform hover:-translate-y-1 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed group"
+                                    className="w-full bg-blue-600 text-white py-4 sm:py-5 rounded-xl sm:rounded-[1.5rem] font-black text-base sm:text-lg shadow-2xl hover:bg-white hover:text-slate-900 transition-all transform hover:-translate-y-1 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed group"
                                 >
                                     {status === 'loading' ? t.checkout.processing : (
                                         <div className={`flex items-center justify-center gap-3 ${language === 'ar' ? 'flex-row-reverse' : ''}`}>

@@ -27,12 +27,12 @@ const ProductCard = memo(function ProductCard({
     return (
         <div className="group glass rounded-2xl sm:rounded-[3rem] p-3 sm:p-6 futuristic-card flex flex-col h-full overflow-hidden border-white/10 hover:border-white/20 transition-all duration-500">
             {/* Image Container */}
-            <div className="relative aspect-square rounded-xl sm:rounded-[2.5rem] overflow-hidden mb-4 sm:mb-8 bg-white shadow-inner border border-slate-100 p-3 sm:p-6">
+            <div className="relative aspect-square rounded-xl sm:rounded-[2.5rem] overflow-hidden mb-3 sm:mb-6 bg-white shadow-inner border border-slate-100 p-2 sm:p-4">
                 <Link href={`/products/${product.id}`} className="block w-full h-full" prefetch={false}>
                     <img
                         src={product.image_url}
                         alt={localName || product.name}
-                        className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 ease-out"
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 ease-out"
                         loading="lazy"
                         decoding="async"
                     />
@@ -42,14 +42,14 @@ const ProductCard = memo(function ProductCard({
                 {product.stock > 0 && (
                     <button
                         onClick={() => onQuickAdd(product)}
-                        className={`absolute bottom-4 right-4 w-12 h-12 rounded-2xl flex items-center justify-center shadow-2xl transition-all duration-300 active:scale-90 z-20 ${addingId === product.id ? 'bg-green-500 text-white scale-110' : 'bg-slate-900/90 text-white hover:bg-blue-600'}`}
+                        className={`absolute bottom-2 right-2 sm:bottom-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl transition-all duration-300 active:scale-90 z-20 text-sm sm:text-base ${addingId === product.id ? 'bg-green-500 text-white scale-110' : 'bg-slate-900/90 text-white hover:bg-blue-600'}`}
                         title={language === 'ar' ? 'أضف للسلة' : 'Add to Cart'}
                     >
                         {addingId === product.id ? '✓' : '🛒'}
                     </button>
                 )}
 
-                <div className="absolute top-4 right-4 bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-black text-white shadow-2xl border border-white/5">
+                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-slate-900/90 backdrop-blur-md px-2 py-1 sm:px-3 sm:py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-black text-white shadow-xl border border-white/5">
                     {product.price} TND
                 </div>
             </div>
@@ -70,7 +70,7 @@ const ProductCard = memo(function ProductCard({
                     </div>
                 </div>
 
-                <p className={`text-slate-400 text-sm sm:text-base mb-4 sm:mb-8 line-clamp-2 leading-relaxed flex-grow font-medium opacity-70 ${language === 'ar' ? 'text-right' : ''}`}>
+                <p className={`text-slate-400 text-xs sm:text-sm mb-3 sm:mb-6 line-clamp-2 leading-relaxed flex-grow font-medium opacity-70 hidden sm:block ${language === 'ar' ? 'text-right' : ''}`}>
                     {localDesc || product.description}
                 </p>
 
