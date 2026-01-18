@@ -50,10 +50,10 @@ export default function ProductDetail({ product }: { product: Product }) {
                 {t.product.back}
             </Link>
 
-            <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-start">
-                <div className="space-y-6 animate-in fade-in slide-in-from-left duration-700 max-w-lg mx-auto lg:mx-0">
-                    <div className="rounded-[3rem] overflow-hidden glass p-6 shadow-2xl shadow-slate-900/50 border-white/10 relative group/gallery">
-                        <div className="aspect-square rounded-[2rem] overflow-hidden bg-white flex items-center justify-center p-8 relative">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-24 items-start">
+                <div className="space-y-4 sm:space-y-6 animate-in fade-in slide-in-from-left duration-700 max-w-lg mx-auto lg:mx-0">
+                    <div className="rounded-2xl sm:rounded-[3rem] overflow-hidden glass p-3 sm:p-6 shadow-2xl shadow-slate-900/50 border-white/10 relative group/gallery">
+                        <div className="aspect-square rounded-xl sm:rounded-[2rem] overflow-hidden bg-white flex items-center justify-center p-4 sm:p-8 relative">
                             <img
                                 src={mainImage}
                                 alt={localName || product.name}
@@ -72,11 +72,12 @@ export default function ProductDetail({ product }: { product: Product }) {
                             )}
                         </div>
                     </div>
-                    <div className="flex justify-center lg:justify-start gap-4">
+                    <div className="flex justify-center lg:justify-start gap-2 sm:gap-4 overflow-x-auto pb-2">
                         {images.map((img, i) => (
-                            <button key={i} onClick={() => setMainImage(img)} className={`w-20 h-20 rounded-2xl overflow-hidden glass p-1 shadow-lg transition-all hover:scale-105 active:scale-95 flex-shrink-0 ${mainImage === img ? 'ring-2 ring-blue-500' : 'opacity-40 hover:opacity-100'}`}>
-                                <div className="w-full h-full rounded-xl overflow-hidden bg-white p-1">
+                            <button key={i} onClick={() => setMainImage(img)} className={`w-14 h-14 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl overflow-hidden glass p-1 shadow-lg transition-all hover:scale-105 active:scale-95 flex-shrink-0 ${mainImage === img ? 'ring-2 ring-blue-500' : 'opacity-40 hover:opacity-100'}`}>
+                                <div className="w-full h-full rounded-lg sm:rounded-xl overflow-hidden bg-white p-1">
                                     <img src={img} alt={`${localName || product.name} ${i + 1}`} className="w-full h-full object-contain" />
+                                </div>
                                 </div>
                             </button>
                         ))}
@@ -84,34 +85,34 @@ export default function ProductDetail({ product }: { product: Product }) {
                 </div>
 
                 <div className={`flex flex-col pt-4 animate-in fade-in slide-in-from-right duration-700 ${language === 'ar' ? 'text-right items-end' : ''}`}>
-                    <h1 className="text-6xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-[0.85] italic">
+                    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white mb-6 sm:mb-10 tracking-tighter leading-[0.85] italic">
                         {localName || product.name}
                     </h1>
-                    <div className={`flex items-baseline gap-4 mb-12 ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
-                        <span className="text-6xl font-black gradient-text tracking-tighter">{product.price}</span>
-                        <span className="text-2xl font-black text-slate-400 uppercase tracking-widest italic">TND</span>
+                    <div className={`flex items-baseline gap-2 sm:gap-4 mb-8 sm:mb-12 ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
+                        <span className="text-4xl sm:text-5xl md:text-6xl font-black gradient-text tracking-tighter">{product.price}</span>
+                        <span className="text-lg sm:text-2xl font-black text-slate-400 uppercase tracking-widest italic">TND</span>
                     </div>
-                    <div className="prose prose-slate max-w-none mb-16">
-                        <p className={`text-2xl text-slate-400 font-bold opacity-90 max-w-xl ${language === 'ar' ? 'text-right' : ''}`}>
+                    <div className="prose prose-slate max-w-none mb-8 sm:mb-16">
+                        <p className={`text-lg sm:text-xl md:text-2xl text-slate-400 font-bold opacity-90 max-w-xl ${language === 'ar' ? 'text-right' : ''}`}>
                             {localDesc || product.description}
                         </p>
                     </div>
 
-                    <div className="mt-auto space-y-8 w-full">
+                    <div className="mt-auto space-y-6 sm:space-y-8 w-full">
                         {product.stock > 0 ? (
-                            <div className="space-y-6 p-8 rounded-[3rem] glass border-white/10 shadow-xl">
+                            <div className="space-y-4 sm:space-y-6 p-4 sm:p-8 rounded-2xl sm:rounded-[3rem] glass border-white/10 shadow-xl">
                                 <div className={`flex items-center gap-4 ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
-                                    <div className="text-sm font-bold text-slate-400">
+                                    <div className="text-xs sm:text-sm font-bold text-slate-400">
                                         <span className="text-green-500">✓ {t.product.stock}</span> • {product.stock} {t.product.available}
                                     </div>
                                 </div>
 
                                 <button
                                     onClick={handleOrderNow}
-                                    className="w-full bg-white text-slate-900 py-6 text-center font-black text-xl rounded-[2rem] shadow-2xl hover:bg-blue-600 hover:text-white hover:-translate-y-1 transition-all duration-300 active:scale-95 flex items-center justify-center gap-3 group"
+                                    className="w-full bg-white text-slate-900 py-4 sm:py-6 text-center font-black text-base sm:text-xl rounded-2xl sm:rounded-[2rem] shadow-2xl hover:bg-blue-600 hover:text-white hover:-translate-y-1 transition-all duration-300 active:scale-95 flex items-center justify-center gap-2 sm:gap-3 group"
                                 >
                                     {t.product.orderNow}
-                                    <svg className={`w-6 h-6 group-hover:${language === 'ar' ? '-translate-x-1' : 'translate-x-1'} transition-transform ${language === 'ar' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className={`w-4 h-4 sm:w-6 sm:h-6 flex-shrink-0 group-hover:${language === 'ar' ? '-translate-x-1' : 'translate-x-1'} transition-transform ${language === 'ar' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                     </svg>
                                 </button>

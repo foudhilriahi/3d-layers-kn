@@ -66,13 +66,13 @@ export default function Footer() {
         <footer className="mt-24 pt-16 pb-12 border-t border-slate-100 dark:border-white/5 relative bg-slate-900 text-white z-[200]">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
 
-            <div className="max-w-7xl mx-auto px-6 text-center md:text-left">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                    <div className="space-y-6">
-                        <Link href="/" className="text-3xl font-black italic tracking-tighter hover:text-blue-200 transition-colors">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center md:text-left">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-12">
+                    <div className="space-y-4 sm:space-y-6">
+                        <Link href="/" className="text-2xl sm:text-3xl font-black italic tracking-tighter hover:text-blue-200 transition-colors">
                             <span className="gradient-text">3D LAYERS</span>
                         </Link>
-                        <p className="text-slate-400 font-bold leading-relaxed max-w-sm mx-auto md:mx-0">
+                        <p className="text-slate-400 font-bold leading-relaxed max-w-sm mx-auto md:mx-0 text-sm sm:text-base">
                             {t.footer.aboutDesc}
                         </p>
                     </div>
@@ -101,16 +101,16 @@ export default function Footer() {
                                 <span className="text-sm font-black tracking-tight">3d_layers_kn</span>
                             </a>
 
-                            <div className="group relative flex items-center gap-4 p-2 pr-6 rounded-2xl bg-white/5 border border-white/10 hover:border-white/40 transition-all duration-500 cursor-help">
-                                <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg bg-white relative">
+                            <div className="group relative flex items-center gap-2 sm:gap-4 p-2 pr-4 sm:pr-6 rounded-2xl bg-white/5 border border-white/10 hover:border-white/40 transition-all duration-500 cursor-help">
+                                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl overflow-hidden shadow-lg bg-white relative flex-shrink-0">
                                     <img src="/qrcode.jpg" alt="Scan" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                 </div>
-                                <span className="text-sm font-black tracking-tight">Scan Me</span>
-                                <div className="absolute bottom-[calc(100%+8px)] left-1/2 -translate-x-1/2 mb-4 p-4 bg-white rounded-3xl shadow-2xl scale-0 group-hover:scale-100 transition-all duration-500 origin-bottom z-[300] pointer-events-none">
-                                    <div className="w-48 h-48 rounded-2xl overflow-hidden border-8 border-white">
+                                <span className="text-xs sm:text-sm font-black tracking-tight">Scan Me</span>
+                                <div className="hidden sm:block absolute bottom-[calc(100%+8px)] left-1/2 -translate-x-1/2 mb-4 p-4 bg-white rounded-3xl shadow-2xl scale-0 group-hover:scale-100 transition-all duration-500 origin-bottom z-[300] pointer-events-none">
+                                    <div className="w-32 h-32 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border-4 sm:border-8 border-white">
                                         <img src="/qrcode.jpg" alt="Scan Large" className="w-full h-full object-contain" />
                                     </div>
-                                    <div className="text-slate-900 text-[10px] font-black uppercase tracking-widest text-center mt-2">Scannez pour commander</div>
+                                    <div className="text-slate-900 text-[8px] sm:text-[10px] font-black uppercase tracking-widest text-center mt-2">Scannez pour commander</div>
                                     <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-8 border-transparent border-t-white" />
                                 </div>
                             </div>

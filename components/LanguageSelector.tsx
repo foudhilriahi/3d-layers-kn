@@ -21,11 +21,11 @@ export default function LanguageSelector() {
             <div className="relative inline-block text-left">
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full glass hover:bg-slate-700/50 transition-all text-sm font-bold tracking-tight text-white border-white/10 shadow-lg min-h-[44px] touch-manipulation"
+                    className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 rounded-full glass hover:bg-slate-700/50 transition-all text-sm font-bold tracking-tight text-white border-white/10 shadow-lg min-h-[40px] sm:min-h-[44px] touch-manipulation"
                 >
-                    <span>{currentLang?.flag}</span>
-                    <span className="hidden sm:inline">{currentLang?.name}</span>
-                    <svg className={`w-3 h-3 ml-1 transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span className="text-base sm:text-lg">{currentLang?.flag}</span>
+                    <span className="hidden sm:inline text-xs sm:text-sm">{currentLang?.name}</span>
+                    <svg className={`w-2.5 h-2.5 sm:w-3 sm:h-3 transition-transform flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
