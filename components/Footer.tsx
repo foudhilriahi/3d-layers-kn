@@ -122,7 +122,7 @@ export default function Footer() {
                     <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">
                         &copy; 2025 • 3d_layers_kn • Crafted in Tunisia
                     </div>
-                    <div className="flex gap-8">
+                    <div className="flex gap-8 items-center">
                         <button
                             onClick={() => setActiveModal("terms")}
                             className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] hover:text-blue-500 transition-colors"
@@ -135,6 +135,17 @@ export default function Footer() {
                         >
                             Privacy
                         </button>
+                        <span className="text-[10px] font-medium text-slate-500">
+                            made by{" "}
+                            <a 
+                                href="https://github.com/foudhilriahi" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-blue-400 hover:text-blue-300 transition-colors"
+                            >
+                                foudhil
+                            </a>
+                        </span>
                     </div>
                 </div>
             </div>

@@ -78,7 +78,6 @@ export default function ProductDetail({ product }: { product: Product }) {
                                 <div className="w-full h-full rounded-lg sm:rounded-xl overflow-hidden bg-white p-1">
                                     <img src={img} alt={`${localName || product.name} ${i + 1}`} className="w-full h-full object-contain" />
                                 </div>
-                                </div>
                             </button>
                         ))}
                     </div>
