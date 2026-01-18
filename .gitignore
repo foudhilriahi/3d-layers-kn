@@ -48,5 +48,5 @@ SECURITY.md
 SECURITY_SUMMARY.md
 START_HERE.md
 
-# Images (screenshots with sensitive data)
-*.png
+# Root level images only (not public/screenshots)
+/*.png

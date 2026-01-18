@@ -1,63 +1,158 @@
-# 3D LAYERS KN 🇹🇳
+<div align="center">
 
-Modern e-commerce platform for 3D printed products, built with Next.js 14.
+# 🇹🇳 3D LAYERS KN
 
-## Features
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Turso](https://img.shields.io/badge/Turso-4FF8D2?style=for-the-badge&logo=turso&logoColor=black)](https://turso.tech/)
 
-- 🛒 Shopping cart with localStorage persistence
-- 🌐 Multi-language support (French, English, Arabic)
-- 📱 Fully responsive design
-- 🔒 Secure checkout with validation
-- 📧 Email notifications for orders
-- 👤 Admin dashboard for order management
-- 🗄️ Turso (SQLite) serverless database
+**Modern e-commerce platform for 3D printed products**
 
-## Tech Stack
+*Built with ❤️ in Tunisia*
 
-- **Framework:** Next.js 14 (App Router)
-- **Styling:** Tailwind CSS
-- **Database:** Turso (libSQL)
-- **Language:** TypeScript
-- **Deployment:** Netlify
+[Live Demo](#) • [Features](#-features) • [Screenshots](#-screenshots) • [Getting Started](#-getting-started)
 
-## Getting Started
+</div>
 
-### 1. Clone the repository
+---
+
+## ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| 🛒 **Smart Cart** | LocalStorage persistence with real-time updates |
+| 🌐 **Multi-language** | French, English & Arabic (RTL support) |
+| 📱 **Responsive** | Mobile-first design, works on all devices |
+| 🔒 **Secure** | Input validation, XSS protection, rate limiting |
+| 📧 **Notifications** | Automatic email alerts for new orders |
+| 👤 **Admin Panel** | Order management & product CRUD |
+| 🗄️ **Serverless DB** | Turso (SQLite) - 9GB free forever |
+| ⚡ **Fast** | ISR caching, optimized images, lazy loading |
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+
+### 🏠 Homepage
+<img src="public/screenshots/1.png" alt="Homepage" width="800"/>
+
+### 🛍️ Product Details
+<img src="public/screenshots/2.png" alt="Product Details" width="800"/>
+
+### 🛒 Shopping Cart
+<img src="public/screenshots/3.png" alt="Shopping Cart" width="800"/>
+
+### 👤 Admin Dashboard
+<img src="public/screenshots/4.png" alt="Admin Dashboard" width="800"/>
+
+</div>
+
+---
+
+## 🛠️ Tech Stack
+
+```
+Frontend     →  Next.js 14 (App Router) + React 18
+Styling      →  Tailwind CSS + Custom Glass UI
+Database     →  Turso (libSQL/SQLite Edge)
+Language     →  TypeScript
+Auth         →  Custom Admin Auth
+Email        →  Nodemailer + Gmail
+Deployment   →  Netlify
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+- [Turso](https://turso.tech) account (free)
+
+### Installation
+
 ```bash
-git clone https://github.com/YOUR_USERNAME/3d-layers-kn.git
+# Clone the repository
+git clone https://github.com/foudhilriahi/3d-layers-kn.git
 cd 3d-layers-kn
-```
 
-### 2. Install dependencies
-```bash
+# Install dependencies
 npm install
+
+# Set up environment variables
+cp .env.example .env.local
+# Edit .env.local with your credentials
+
+# Run development server
+npm run dev
 ```
 
-### 3. Set up environment variables
-Create a `.env.local` file:
+### Environment Variables
+
 ```env
-TURSO_DATABASE_URL=your-turso-url
-TURSO_AUTH_TOKEN=your-turso-token
+TURSO_DATABASE_URL=libsql://your-db.turso.io
+TURSO_AUTH_TOKEN=your-token
 ADMIN_PASSWORD=your-secure-password
 EMAIL_USER=your-email@gmail.com
 EMAIL_PASSWORD=your-app-password
 ```
 
-### 4. Run development server
-```bash
-npm run dev
+---
+
+## 📦 Deployment
+
+### Netlify (Recommended)
+
+1. Push to GitHub
+2. Connect repo on [Netlify](https://app.netlify.com)
+3. Configure:
+   - **Build command:** `npm run build`
+   - **Publish directory:** `.next`
+4. Add environment variables
+5. Deploy! 🚀
+
+---
+
+## 📁 Project Structure
+
+```
+├── app/
+│   ├── admin/          # Admin dashboard
+│   ├── api/            # API routes
+│   ├── cart/           # Shopping cart
+│   ├── products/       # Product pages
+│   └── page.tsx        # Homepage
+├── components/         # React components
+├── lib/                # Utilities & DB
+│   ├── db.ts           # Turso connection
+│   ├── actions.ts      # Server actions
+│   └── validation.ts   # Input validation
+└── public/             # Static assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+---
 
-## Deployment
+## 🤝 Contributing
 
-### Netlify
-1. Connect your GitHub repository
-2. Set build command: `npm run build`
-3. Set publish directory: `.next`
-4. Add environment variables in Netlify dashboard
+Contributions are welcome! Feel free to open issues or submit PRs.
 
-## License
+---
 
-MIT
+## 📄 License
+
+MIT © [foudhilriahi](https://github.com/foudhilriahi)
+
+---
+
+<div align="center">
+
+**Made with 💙 using Next.js & Turso**
+
+[![GitHub stars](https://img.shields.io/github/stars/foudhilriahi/3d-layers-kn?style=social)](https://github.com/foudhilriahi/3d-layers-kn)
+
+</div>
