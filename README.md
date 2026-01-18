@@ -15,6 +15,10 @@
 
 </div>
 
+> [!WARNING]
+> **📱 Mobile Version Under Development**  
+> The mobile responsive design is currently being improved. For the best experience, please use a desktop browser.
+
 ---
 
 ## ✨ Features
